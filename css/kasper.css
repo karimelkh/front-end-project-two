@@ -6,7 +6,7 @@
     --main-font-family: 'Open Sans', sans-serif;
     --main-color: #00ccff;
     --dark-bg-color: #1f2021;
-    --overly-color: rgba(31, 32, 33, 0.5);
+    --overly-color: rgba(31, 32, 33, 0.7);
     --blue-bg-color: rgba(0, 204, 255, 0.5);
     --sec-text-color: #b0acae;
     --section-pad-mar: 100px;
@@ -160,6 +160,7 @@ header .container .logo img {
 header .container .toggle-menu {
     font-size: 22px;
     color: white;
+    transition: 0.3s;
 }
 @media (min-width: 768px) {
     header .container .toggle-menu {
@@ -429,68 +430,65 @@ li.active {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 0;
 }
-.portfolio .portfolio-grid div img {
+.portfolio .portfolio-grid .box {
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.portfolio .portfolio-grid .box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
+    transition: 0.3s;
 }
-.portfolio .portfolio-grid .add-image {
-    position: relative;
+.portfolio .portfolio-grid .box:hover img {
+    transform: rotate(2deg) scale(1.1);
 }
-.portfolio .portfolio-grid .add-image div:first-child {
-    width: 100px;
-    height: 100px;
+.portfolio .portfolio-grid .box .caption {
+    padding: 10px 20px;
+    width: 100%;
     position: absolute;
-    top: calc(50% - 55.2px);
-    right: calc(50% - 50px);
-    border-radius: 50%;
-    background-color: var(--blue-bg-color);
-    
-}
-.portfolio .portfolio-grid .add-image div:first-child span:first-child {
-    width: 40px;
-    height: 1.5px;
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: calc(50% - 20px);
+    bottom: -100%;
     background-color: white;
+    transition: 0.3s;
 }
-.portfolio .portfolio-grid .add-image div:first-child span:last-child {
-    height: 40px;
-    width: 1.5px;
-    display: block;
-    position: absolute;
-    top: calc(50% - 20px);
-    right: 50%;
-    background-color: white;
-}
-.portfolio .portfolio-grid .add-image div:nth-child(2) {
-    padding: 10px 25px;
-    position: absolute;
-    right: 0;
+.portfolio .portfolio-grid .box:hover .caption {
     bottom: 0;
-    left: 0;
-    background-color: white;
 }
-.portfolio .portfolio-grid .add-image div:nth-child(2) span:first-child {
-    margin-bottom: 3px;
-    display: block;
+.portfolio .portfolio-grid .box .caption h4 {
+    font-weight: normal;
 }
-.portfolio .portfolio-grid .add-image div:nth-child(2) span:last-child {
-    display: block;
-    font-size: 12px;
+.portfolio .portfolio-grid .box .caption p {
+    font-size: 14px;
     color: var(--main-color, #00ccff);
 }
 /* / Portfolio */
 
 /* Video section */
 .video-section {
-    padding-top: var(--section-pad-mar);
-    padding-bottom: var(--section-pad-mar);
+    position: relative;
+}
+.video-section:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--overly-color, rgba(31, 32, 33, 0.5));
+}
+.video-section video {
+    width: 100%;
+}
+.video-section .blue-container {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
     text-align: center;
-    background-color: var(--dark-bg-color, #1f2021);
+    z-index: 1;
 }
 .video-section h1 {
     font-weight: 500;
@@ -529,21 +527,42 @@ li.active {
 .about .stats {
     padding-top: var(--section-pad-mar);
     padding-bottom: var(--section-pad-mar);
+    text-align: center;
+    position: relative;
+    background-image: url(../images/polygonal.jpeg);
+    background-size: cover;
     background-color: var(--dark-bg-color, #1f2021);
 }
+.about .stats:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
 .about .stats .stats-container {
+    width: 100%;
     padding-top: 60px;
     padding-bottom: 60px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     justify-items: center;
     row-gap: 60px;
-}
-.about .stats .stats-container div {
-    text-align: center;
+    position: relative;
+    z-index: 1;
 }
 .about .stats .stats-container div i {
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 20px;
+    background-color: black;
 }
 .about .stats .stats-container div h1 {
     margin-top: 20px;
@@ -640,26 +659,14 @@ li.active {
     height: 20px;
     margin-bottom: 40px;
     position: relative;
-    background-color: var(--sec-text-color);
+    background-color: #dedadc;
 }
 .about .testimonials-skills-grid .skills .skill-bars div div {
     height: 100%;
     position: relative;
     background-color: var(--main-color);
 }
-.about .testimonials-skills-grid .skills .skill-bars .skill-adobe div {
-    width: 95%;
-}
-.about .testimonials-skills-grid .skills .skill-bars .skill-html-css div {
-    width: 93%;
-}
-.about .testimonials-skills-grid .skills .skill-bars .skill-js div {
-    width: 85%;
-}
-.about .testimonials-skills-grid .skills .skill-bars .skill-php div {
-    width: 87%;
-}
-.about .testimonials-skills-grid .skills .skill-bars div div::after {
+.about .testimonials-skills-grid .skills .skill-bars div div::before {
     content: "";
     position: absolute;
     top: -8px;
@@ -668,15 +675,17 @@ li.active {
     border-style: solid;
     border-color: black transparent transparent transparent;
 }
-.about .testimonials-skills-grid .skills .skill-bars div div span {
+.about .testimonials-skills-grid .skills .skill-bars div div::after {
+    content: attr(data-prog);
     max-width: 40px;
     max-height: 20px;
     padding: 5px 8px;
     position: absolute;
     right: -20px;
-    top: -28px;
+    top: -31px;
     font-size: 12px;
     font-weight: 600;
+    text-align: center;
     background-color: black;
     color: white;
 }
@@ -714,6 +723,7 @@ li.active {
 }
 .pricing .offers-grid .offer {
     border-top: 1.5px solid var(--main-color, #00ccff);
+    background-color: #fafafa;
 }
 .pricing .offers-grid .offer h1 {
     margin-top: 30px;
@@ -764,52 +774,77 @@ li.active {
 .subscribe {
     padding-top: var(--section-pad-mar);
     padding-bottom: var(--section-pad-mar);
+    position: relative;
+    background-image: url(../images/earth.jpeg);
+    background-position: center;
+    background-size: cover;
     background-color: var(--dark-bg-color);
     color: white;
 }
+.subscribe::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
 .subscribe .container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
 }
-@media (max-width: 767px) {
+@media (max-width: 1199px) {
     .subscribe .container {
-        display: block;
-        text-align: center;
+        flex-direction: column;
+    }
+    .subscribe .container p {
+        margin-top: 30px;
     }
 }
-.subscribe .container div input {
-    margin-right: -4px;
+.subscribe .container form {
+    display: flex;
+    position: relative;
+    max-width: 100%;
+}
+.subscribe .container form input {
     width: 400px;
-    padding: 15px;
+    padding: 15px 15px 15px 40px;
     border: 1.5px solid white;
-    border-right: none;
     font-weight: 500;
     background-color: transparent;
     color: white;
+    caret-color: var(--main-color);
 }
-@media (max-width: 767px) {
-    .subscribe .container div input {
-        max-width: 80%;
-        margin-right: auto;
-        margin-left: auto;
-        display: block;
-        border-right: 1.5px solid white;
-    }
+.subscribe .container form input:focus,
+.subscribe .container form input:focus + button{
+    outline: none;
+    border-color: var(--main-color);
 }
-.subscribe .container div button {
+.subscribe .container form i {
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+.subscribe .container form button {
     padding: 15px 20px;
     border: 1.5px solid white;
-    border-left: none;
-    font-weight: 600px;
+    font-weight: 600;
     background-color: var(--main-color, #00ccff);
     color: white;
-    
 }
-@media (max-width: 767px) {
-    .subscribe .container div button {
-        display: block;
-        margin: 20px auto;
+@media (min-width: 1200px) {
+    .subscribe .container form input {
+        border-right: none;
+    }
+    .subscribe .container form button {
+        border-left: none;
     }
 }
 .subscribe .container p {
@@ -830,24 +865,27 @@ li.active {
         display: block;
     }
 }
-.contact .contact-grid .contact-inputs {
+.contact .contact-grid form {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto auto 300px auto;
 }
 @media (max-width: 767px) {
-    .contact .contact-grid .contact-inputs {
+    .contact .contact-grid form {
         margin-bottom: 50px;
     }
 }
-.contact .contact-grid .contact-inputs input {
+.contact .contact-grid form .main-input {
     margin-bottom: 30px;
     padding: 20px;
     border: 1.5px solid var(--sec-text-color, #b0acae);
     font-size: 14px;
     font-weight: 500;
 }
-.contact .contact-grid .contact-inputs button {
+.contact .contact-grid form .main-input:focus {
+    outline: none;
+}
+.contact .contact-grid form button {
     margin-left: auto;
     max-width: 200px;
     padding: 15px 20px;
@@ -857,7 +895,7 @@ li.active {
     color: white;
 }
 @media (max-width: 767px) {
-    .contact .contact-grid .contact-inputs button {
+    .contact .contact-grid form button {
         margin-right: auto;
     }
 }
@@ -881,16 +919,34 @@ li.active {
     font-size: 14px;
     color: var(--sec-text-color);
 }
+.contact .contact-grid .more-info address {
+    font-style: normal;
+}
 /* / Contact */
 
 /* Footer */
 footer {
     padding-top: var(--section-pad-mar);
     padding-bottom: 40px;
+    background-image: url(../images/flowers.jpeg);
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
     background-color: var(--dark-bg-color, #1f2021);
+}
+footer::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
 }
 footer .container {
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 footer .container .logo {
     width: 120px;
@@ -916,6 +972,10 @@ footer .container .social-media ul li {
 }
 footer .container .social-media ul li i {
     font-size: 20px;
+    transition: 0.3s;
+}
+footer .container .social-media ul li i:hover {
+    color: var(--main-color, #00ccff);
 }
 footer .container .copyright {
     color: white;

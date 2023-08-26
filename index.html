@@ -219,44 +219,68 @@
         <!-- portfolio grid -->
         <div class="portfolio-grid">
 
-            <div>
+            <div class="box">
                 <img src="images/Cute-desktop-wallpaper.jpeg">
+                <div class="caption">
+                    <h4>Awesome image</h4>
+                    <p>Photography</p>
+                </div>
             </div>
-            
-            <div class="add-image">
-                <div>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div>
-                    <span>Awesome image</span>
-                    <span>Photography</span>
-                </div>
+
+            <div class="box">
                 <img src="images/boy.jpeg">
+                <div class="caption">
+                    <h4>Awesome image</h4>
+                    <p>Photography</p>
+                </div>
             </div>
-            
-            <div>
+
+            <div class="box">
                 <img src="images/godzilla.jpeg">
+                <div class="caption">
+                    <h4>Awesome image</h4>
+                    <p>Photography</p>
+                </div>
             </div>
             
-            <div>
+            <div class="box">
                 <img src="images/Into-the-spider-verse.jpeg">
+                <div class="caption">
+                    <h4>Awesome image</h4>
+                    <p>Photography</p>
+                </div>
             </div>
             
-            <div>
+            <div class="box">
                 <img src="images/jack.jpeg">
+                <div class="caption">
+                    <h4>Awesome image</h4>
+                    <p>Photography</p>
+                </div>
             </div>
             
-            <div>
+            <div class="box">
                 <img src="images/sky.jpeg">
+                <div class="caption">
+                    <h4>Awesome image</h4>
+                    <p>Photography</p>
+                </div>
             </div>
             
-            <div>
+            <div class="box">
                 <img src="images/Thibaud-Pourplanche.jpeg">
+                <div class="caption">
+                    <h4>Awesome image</h4>
+                    <p>Photography</p>
+                </div>
             </div>
             
-            <div>
+            <div class="box">
                 <img src="images/Vintage-Desk.jpeg">
+                <div class="caption">
+                    <h4>Awesome image</h4>
+                    <p>Photography</p>
+                </div>
             </div>
         </div>
 
@@ -270,6 +294,7 @@
 
     <!-- Video section -->
     <section class="video-section">
+        <video src="images/stars.mp4" type="video/mp4" autoplay muted loop></video>
         <div class="blue-container">
             <h1>SUPER AWESOME VIDEO HERE</h1>
             <p>it is all you need</p>
@@ -380,26 +405,26 @@
                 <div class="skill-bars">
                     <h1>ADOBE</h1>
                     <div class="skill-adobe">
-                        <div>
-                            <span>95%</span>
+                        <div style="width: 95%" data-prog="95%">
+                            <!-- <span>95%</span> -->
                         </div>
                     </div>
-                    <h1>HTML & CSS</h1>
+                    <h1>HTML &amp; CSS</h1>
                     <div class="skill-html-css">
-                        <div>
-                            <span>93%</span>
+                        <div style="width: 93%" data-prog="93%">
+                            <!-- <span>93%</span> -->
                         </div>
                     </div>
                     <h1>JAVASCRIPT</h1>
                     <div class="skill-js">
-                        <div>
-                            <span>85%</span>
+                        <div style="width: 85%" data-prog="85%">
+                            <!-- <span>85%</span> -->
                         </div>
                     </div>
                     <h1>PHP</h1>
                     <div class="skill-php">
-                        <div>
-                            <span>87%</span>
+                        <div style="width: 87%" data-prog="87%">
+                            <!-- <span>87%</span> -->
                         </div>
                     </div>
                 </div>
@@ -515,10 +540,11 @@
         <!-- Subscribe -->
         <div class="subscribe">
             <div class="container">
-                <div>
-                    <input type="text" placeholder="YOUR MAIL">
+                <form>
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" placeholder="YOUR EMAIL">
                     <button>SUBSCRIBE</button>
-                </div>
+                </form>
                 <p>
                     Join us and stay connected! Send us an email 
                     to receive exclusive updates, exciting offers.
@@ -548,12 +574,12 @@
             </div>
 
             <div class="contact-grid">
-                <div class="contact-inputs">
-                    <input type="text" placeholder="NAME">
-                    <input type="text" placeholder="EMAIL">
-                    <input type="text" placeholder="MESSAGE">
+                <form>
+                    <input type="text" class="main-input" placeholder="NAME">
+                    <input type="email" class="main-input" placeholder="EMAIL">
+                    <textarea name="message" class="main-input" placeholder="MESSAGE"></textarea>
                     <button>SEND MESSAGE</button>
-                </div>
+                </form>
                 <div class="more-info">
                     <div>
                         <h3>GET IN TOUCH</h3>
@@ -562,10 +588,12 @@
                     </div>
                     <div>
                         <h3>WHERE WE ARE</h3>
-                        <p>Awesome address 17</p>
-                        <p>NYC</p>
-                        <p>123-456-789</p>
-                        <p>MOROCCO</p>
+                        <address>
+                            <p>Awesome address 17</p>
+                            <p>NYC</p>
+                            <p>123-456-789</p>
+                            <p>MOROCCO</p>
+                        </address>
                     </div>
                 </div>
             </div>
