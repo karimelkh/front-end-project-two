@@ -6,7 +6,7 @@ Welcome to my second frontend project.
 ## Overview
 
 Welcome to my project, where I've taken a free template design and turned it into a fully functional webpage. <br>
-This endeavor showcases my skills in **HTML** and **CSS** *(JavaScript soon!!)* as I transform a static design into an interactive online experience.
+This endeavor showcases my skills in **HTML**, **CSS** and **JavaScript** as I transform a static design into an interactive online experience.
 
 
 ## Description
@@ -18,6 +18,7 @@ I've selected a free template design as the foundation of this project. By utili
 
 - **Interactive Elements:** Explore interactive components that breathe life into the once-static design.
 - **Responsive Design:** Experience seamless navigation across various devices, thanks to responsive styling.
+- **background image slider:** Dynamic background image slider created using JavaScript.
 
 
 ## Technologies Used
