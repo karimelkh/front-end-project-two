@@ -35,7 +35,6 @@ bgImages.forEach(bgImg => {
 
 // Bullets array
 const bullets = document.querySelectorAll('.landing .bullets span');
-console.log(bullets);
 
 // Activate the first bullet
 bullets[0].classList.add('active');
