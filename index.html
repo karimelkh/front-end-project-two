@@ -14,6 +14,10 @@
     <!-- Main styles file -->
     <link rel="stylesheet" href="css/kasper.css">
 
+    <!-- Scripts -->
+    <script defer src="scripts/bg-slider.js"></script>
+    <script defer src="scripts/img-shuffle.js"></script>
+
 </head>
 <body>
     <!-- Header -->
@@ -204,81 +208,16 @@
 
             <!-- portfolio shuffle -->
             <ul class="portfolio-shuffle">
-                <li class="active">ALL</li>
-                <li>APP</li>
-                <li>PHOTOGRAPHY</li>
-                <li>WEB</li>
-                <li>PRINT</li>
+                <li class="active" id="all-cats">all</li>
+                <li data-cat="app">app</li>
+                <li data-cat="photo">photography</li>
+                <li data-cat="web">web</li>
+                <li data-cat="print">print</li>
             </ul>
         </div>
 
         <!-- portfolio grid -->
-        <div class="portfolio-grid">
-
-            <div class="box">
-                <img src="images/Cute-desktop-wallpaper.jpeg">
-                <div class="caption">
-                    <h4>Awesome image</h4>
-                    <p>Photography</p>
-                </div>
-            </div>
-
-            <div class="box">
-                <img src="images/boy.jpeg">
-                <div class="caption">
-                    <h4>Awesome image</h4>
-                    <p>Photography</p>
-                </div>
-            </div>
-
-            <div class="box">
-                <img src="images/godzilla.jpeg">
-                <div class="caption">
-                    <h4>Awesome image</h4>
-                    <p>Photography</p>
-                </div>
-            </div>
-            
-            <div class="box">
-                <img src="images/Into-the-spider-verse.jpeg">
-                <div class="caption">
-                    <h4>Awesome image</h4>
-                    <p>Photography</p>
-                </div>
-            </div>
-            
-            <div class="box">
-                <img src="images/jack.jpeg">
-                <div class="caption">
-                    <h4>Awesome image</h4>
-                    <p>Photography</p>
-                </div>
-            </div>
-            
-            <div class="box">
-                <img src="images/sky.jpeg">
-                <div class="caption">
-                    <h4>Awesome image</h4>
-                    <p>Photography</p>
-                </div>
-            </div>
-            
-            <div class="box">
-                <img src="images/Thibaud-Pourplanche.jpeg">
-                <div class="caption">
-                    <h4>Awesome image</h4>
-                    <p>Photography</p>
-                </div>
-            </div>
-            
-            <div class="box">
-                <img src="images/Vintage-Desk.jpeg">
-                <div class="caption">
-                    <h4>Awesome image</h4>
-                    <p>Photography</p>
-                </div>
-            </div>
-        </div>
+        <div class="portfolio-grid" id="shuffle-box"></div>
 
         <!-- more button -->
         <button class="blue-btn">
@@ -617,8 +556,5 @@
         </div>
     </footer>
     <!-- / Footer -->
-
-    <!-- Scripts -->
-    <script src="scripts/script.js"></script>
 </body>
 </html>

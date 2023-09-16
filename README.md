@@ -19,6 +19,7 @@ I've selected a free template design as the foundation of this project. By utili
 - **Interactive Elements:** Explore interactive components that breathe life into the once-static design.
 - **Responsive Design:** Experience seamless navigation across various devices, thanks to responsive styling.
 - **background image slider:** Dynamic background image slider created using JavaScript.
+- **Category-Based Image Gallery:** An interactive web gallery that filters and displays images by categories.
 
 
 ## Technologies Used

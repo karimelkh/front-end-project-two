@@ -423,6 +423,8 @@ header .container .search i {
     margin-right: 15px;
     margin-left: 15px;
     padding: 5px 10px;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 @media (max-width: 767px) {
     .portfolio .container .portfolio-shuffle li {
